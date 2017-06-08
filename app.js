@@ -35,7 +35,10 @@ app.engine('html', require('ejs').renderFile);
 
 //===== 서버 변수 설정 및 static으로 public 폴더 설정  =====//
 console.log('config.server_port : %d', config.server_port);
-app.set('port', process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+});
+
  
 // 미들웨어 커스터마이징
 app.use(function(request, response, next) {
