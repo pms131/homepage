@@ -34,5 +34,5 @@
     "heroku-postbuild": "echo This runs afterwards."
   },
   "author": "",
-  "license": "ISC",
+  "license": "ISC"
 }
