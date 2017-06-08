@@ -27,12 +27,11 @@
   },
   "scripts": {
       "build": "gulp",
-  "start": "node app.js",
-      "start": "node app",
+      "start": "node app.js",
       "postinstall": "gulp default",
     "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
     "heroku-postbuild": "echo This runs afterwards."
   },
-  "author": "",
+  "author": "pms131",
   "license": "ISC",
 }
