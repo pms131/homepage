@@ -26,11 +26,13 @@
     "gulp-util": "^3.0.8"
   },
   "scripts": {
-    "start": "node app",
-    "poststart": "npm prune --production",
+      "build": "gulp",
+  "start": "node app.js",
+      "start": "node app",
+      "postinstall": "gulp default",
     "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
     "heroku-postbuild": "echo This runs afterwards."
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
 }
