@@ -22,7 +22,6 @@ var router = require('./routes/main')(app);
 
 // 모듈로 분리한 라우팅 파일 불러오기
 var route_loader = require('./routes/route_loader');
-var runSeq = require('run-sequence');
 
 // __dirname은 현재 파일 위치를 나타내는 Node.js 전역 변수, view는 views밑에 들어간다, ejs engine 사용
 app.set('views', __dirname + '/public');
