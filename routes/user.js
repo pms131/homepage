@@ -45,7 +45,7 @@ var login = function(req, res) {
 				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
 				res.write('<h1>로그인  실패</h1>');
 				res.write('<div><p>아이디와 패스워드를 다시 확인하십시오.</p></div>');
-				res.write('<meta http-equiv="refresh" content="3;url=/public/login.html"/>');
+				res.write('<meta http-equiv="refresh" content="3;url=/"/>');
 				res.end();
 			}
 		});
