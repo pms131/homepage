@@ -14,7 +14,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "echo hi"
+      "start": "node app",
+      "postinstall": "gulp default"   
   },
   "author": "",
   "license": "ISC"
