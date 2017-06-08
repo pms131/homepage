@@ -10,7 +10,9 @@
     "express": "^4.15.3",
     "express-session": "^1.15.3",
     "git-push": "^0.1.1",
+    "gulp": "^3.9.1",
     "mongoose": "^4.10.5",
+    "run-sequence": "^1.2.2",
     "serve-static": "^1.12.3"
   },
   "devDependencies": {},
