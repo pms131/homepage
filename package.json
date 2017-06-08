@@ -27,10 +27,7 @@
   },
   "scripts": {
       "build": "gulp",
-      "start": "node app.js",
-      "postinstall": "gulp default",
-    "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
-    "heroku-postbuild": "echo This runs afterwards."
+      "start": "node app.js"
   },
   "author": "pms131",
   "license": "ISC"
