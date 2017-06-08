@@ -14,7 +14,7 @@
   },
   "devDependencies": {},
   "scripts": {
-        "start": "echo hi"
+    "start": "echo hi"
   },
   "author": "",
   "license": "ISC"
