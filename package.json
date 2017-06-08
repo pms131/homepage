@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "node app",
-    "postinstall": "gulp default",
+    "poststart": "npm prune --production",
     "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
     "heroku-postbuild": "echo This runs afterwards."
   },
