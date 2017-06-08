@@ -96,3 +96,5 @@ http.createServer(app).listen(app.get('port'), function(){
     database.init(app, config);
    
 });
+
+module.exports = gulp;
