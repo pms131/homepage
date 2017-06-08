@@ -36,19 +36,16 @@ var login = function(req, res) {
             // 조회된 레코드가 있으면 성공 응답 전송
 			if (docs) {
 				console.dir(docs);
-
-				
 				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
 				res.write('<h1>로그인 성공</h1>');
-				res.write('<div><p>사용자 아이디 : ' + paramId + '</p></div>');
-				res.write("<br><br><a href='/public/login.html'>다시 로그인하기</a>");
+				res.write('<meta http-equiv="refresh" content="0;url=/public/index.html"/>');
 				res.end();
 			
 			} else {  // 조회된 레코드가 없는 경우 실패 응답 전송
 				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
 				res.write('<h1>로그인  실패</h1>');
 				res.write('<div><p>아이디와 패스워드를 다시 확인하십시오.</p></div>');
-				res.write("<br><br><a href='/public/login.html'>다시 로그인하기</a>");
+				res.write('<meta http-equiv="refresh" content="3;url=/public/login.html"/>');
 				res.end();
 			}
 		});
@@ -92,7 +89,7 @@ var adduser = function(req, res) {
 				console.dir(addedUser);
  
 				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
-				res.write('<h2>사용자 추가 성공</h2>');
+				res.write('<meta http-equiv="refresh" content="0;url=/public/index.html"/>');
 				res.end();
 			} else {  // 결과 객체가 없으면 실패 응답 전송
 				res.writeHead('200', {'Content-Type':'text/html;charset=utf8'});
@@ -139,7 +136,7 @@ var listuser = function(req, res) {
 				
 				for (var i = 0; i < results.length; i++) {
 					var curId = results[i]._doc.id;
-					res.write('    <li>#' + i + ' : ' + curId + ', ' + '</li>');
+					res.write('    <li>#' + i + ' : ' + curId + '</li>');
 				}	
 			
 				res.write('</ul></div>');
@@ -178,8 +175,7 @@ var authUser = function(database, id, password, callback) {
 			
 			// 2. 패스워드 확인 : 모델 인스턴스를 객체를 만들고 authenticate() 메소드 호출
 			var user = new database.UserModel({id:id});
-			var authenticated = user.authenticate(password, results[0]._doc.salt, results[0]._doc.hashed_password);
-			if (authenticated) {
+			if (password===results[0]._doc.password) {
 				console.log('비밀번호 일치함');
 				callback(null, results);
 			} else {
