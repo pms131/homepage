@@ -1,148 +1,150 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-		
-		<title>로그인</title>
-		
-		<link href="./semantic.min.css" rel="stylesheet" >
 
-        <script src = ".jquery-2.1.4.min.js"></script>
-        <script src = "semantic.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+
+    <title>로그인</title>
+
+    <link href="./semantic.min.css" rel="stylesheet">
+
+    <script src=".jquery-2.1.4.min.js"></script>
+    <script src="semantic.min.js"></script>
+
+    <style>
+        body {
+            background: #DADADA;
+            background-size: cover;
+            padding: 1rem;
+            margin: 0;
+        }
         
-		<style>
-		 body {
-    background: #DADADA;
-    background-size: cover;
-    padding: 1rem;
-    margin: 0;
-  }
-    #content{ 
-                position:absolute;
-  top:0;right:0;bottom:0;left:0;
-  display:-webkit-box;
-  display:-moz-box;
-  display:-ms-flexbox;
-  display:-webkit-flex;
-  display:flex;
+        #content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-align-items: center;
+            -webkit-justify-content: center;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            -moz-box-pack: center;
+            -moz-box-align: center;
+            -ms-box-pack: center;
+            -ms-box-align: center;
+        }
+        
+        .form-holder {
+            background: rgba(255, 255, 255, 0.2);
+            margin-top: 100%;
+            padding-top: 100px;
+            border-radius: 3px;
+        }
+        
+        body>.grid {
+            height: 100%;
+        }
+        
+        .image {
+            margin-top: 100px;
+        }
+        
+        .column {
+            max-width: 450px;
+        }
+    </style>
 
-  align-items:center;
-  justify-content:center;
-  -webkit-align-items:center;
-  -webkit-justify-content:center;
+    <script src="./jquery-3.1.1.min.js"></script>
+    <script src="./semantic.min.js"></script>
+    <script>
+        $(function() {
+            $('.ui.checkbox').checkbox();
+        });
+    </script>
 
-  -webkit-box-pack:center;
-  -webkit-box-align:center;
-  -moz-box-pack:center;
-  -moz-box-align:center;
-  -ms-box-pack:center;
-  -ms-box-align:center;
 
-}        
-  .form-holder {
-    background: rgba(255,255,255,0.2);
-    margin-top: 100%;
-    padding-top : 100px;
-    border-radius: 3px;
-  }
-            body > .grid {
-      height: 100%;
-    }
-    .image {
-      margin-top: 100px;
-    }
-    .column {
-      max-width: 450px;
-    }
-			
-		</style>
-		
-		<script src="./jquery-3.1.1.min.js"></script>
-		<script src="./semantic.min.js"></script>
-		<script>
-			$(function() {
-				$('.ui.checkbox').checkbox();
-			});
-		</script>
-		
-		
-	</head>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
 <body>
 
-		<div class="ui middle aligned center aligned grid" id="content">
-  <div class="column">
-    <h2 class="ui image header">
-      <div class="content">
-        Log-in to your account
-      </div>
-    </h2>
-    <form method="post" action="/process/login" class="ui large form">
-      <div class="ui stacked secondary segment">
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="user icon"></i>
-            <input type="text" name="id" placeholder="id">
-          </div>
+    <div class="ui middle aligned center aligned grid" id="content">
+        <div class="column">
+            <h2 class="ui image header">
+                <div class="content">
+                    Log-in to your account
+                </div>
+            </h2>
+            <form method="post" action="/process/login" class="ui large form">
+                <div class="ui stacked secondary segment">
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="user icon"></i>
+                            <input type="text" name="id" placeholder="id">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left icon input">
+                            <i class="lock icon"></i>
+                            <input type="password" name="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div><input id="submitButton" class="ui fluid large teal submit button" type="submit" value="Login" name="" /></div>
+                </div>
+
+                <div class="ui error message"></div>
+
+            </form>
+
+            <div class="ui message">
+                New to us? <a href="./adduser.html">Sign Up</a>
+            </div>
         </div>
-        <div class="field">
-          <div class="ui left icon input">
-            <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Password"> 
-          </div>
-        </div>
-          <div><input id="submitButton" class="ui fluid large teal submit button" type="submit" value="Login" name="" /></div> 
-      </div>
-
-      <div class="ui error message"></div>
-
-    </form>
-
-    <div class="ui message">
-      New to us? <a href="./adduser.html">Sign Up</a>
     </div>
-  </div>    
-</div>
     <script>
         $(document)
             .ready(function() {
-            $('.ui.form')
-        .form({
-          fields: {
-            id: {
-              identifier  : 'id',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Please enter your id'
-                },
-                {
-                  type   : 'id',
-                  prompt : 'Please enter a valid id'
-                }
-              ]
-            },
-            password: {
-              identifier  : 'password',
-              rules: [
-                {
-                  type   : 'empty',
-                  prompt : 'Please enter your password'
-                },
-                {
-                  type   : 'length[6]',
-                  prompt : 'Your password must be at least 6 characters'
-                }
-              ]
-            }
-          }
-        })
-      ;
-    })
-  ;
+                $('.ui.form')
+                    .form({
+                        fields: {
+                            id: {
+                                identifier: 'id',
+                                rules: [{
+                                        type: 'empty',
+                                        prompt: 'Please enter your id'
+                                    },
+                                    {
+                                        type: 'id',
+                                        prompt: 'Please enter a valid id'
+                                    }
+                                ]
+                            },
+                            password: {
+                                identifier: 'password',
+                                rules: [{
+                                        type: 'empty',
+                                        prompt: 'Please enter your password'
+                                    },
+                                    {
+                                        type: 'length[6]',
+                                        prompt: 'Your password must be at least 6 characters'
+                                    }
+                                ]
+                            }
+                        }
+                    });
+            });
     </script>
-    
-	</body>
+
+</body>
 
 </html>
